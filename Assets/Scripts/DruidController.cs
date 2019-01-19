@@ -5,7 +5,6 @@ using UnityEngine;
 public class DruidController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private bool inAir;
 
     public float speed = 15f;
     public Vector2 drag = new Vector2(-.99f,1);
@@ -13,11 +12,20 @@ public class DruidController : MonoBehaviour
     
     public float stoppingThreshold = 1.0f;
     public float jump = 10f;
+
+    private bool onGround;
+    public Transform groundCheck;
+    public float checkRadius;
+    public LayerMask whatIsGround;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        inAir = false;
     } 
+
+    void FixedUpdate(){
+        onGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+    }
 
     void Update()
     {
@@ -39,34 +47,16 @@ public class DruidController : MonoBehaviour
             }
         }
 
-        if ( xK && !inAir ){
-            inAir = true;
+        if ( xK && onGround ){
             rb.velocity = rb.velocity + new Vector2(0,jump);
-        } else if ( inAir ){
-           rb.velocity = rb.velocity - new Vector2(0,jump*0.1f);
-        } else {
-            rb.velocity = rb.velocity*new Vector2(1,0);
         }
-        Debug.Log("inAir: "+inAir+", rb.velocity: "+rb.velocity);
     }
-
-    void OnCollisionEnter2D(Collision2D col){
-        Debug.Log("Collision");
-        Land();
-    }    
 
     void Transform(){
 
     }
 
     void GetHit(){
-        inAir = false; // damage boost jumps! Could be interesting!
-        rb.velocity = rb.velocity*new Vector2(1,0);
-    }
 
-    void Land(){
-        Debug.Log("Landed");        
-        inAir = false;
-        rb.velocity = new Vector2(0,0);
     }
 }

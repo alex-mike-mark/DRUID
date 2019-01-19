@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 290214982}
   - component: {fileID: 290214981}
   - component: {fileID: 290214980}
+  - component: {fileID: 290214983}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -203,7 +204,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0, y: 0.83}
@@ -232,6 +233,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!68 &290214983
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290214978}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0, y: 0.83}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.042127933, y: -0.7643422}
+  - {x: 0.042670667, y: -0.7641324}
 --- !u!1 &1254637157
 GameObject:
   m_ObjectHideFlags: 0

@@ -319,7 +319,7 @@ MonoBehaviour:
   stoppingThreshold: 1
   jump: 20
   groundCheck: {fileID: 578438530}
-  checkRadius: 0.01
+  checkRadius: 0.04
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -338,7 +338,7 @@ Rigidbody2D:
   m_Mass: 2.01
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4.05
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

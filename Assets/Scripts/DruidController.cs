@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class DruidController : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     public float speed = 15f;
     public Vector2 drag = new Vector2(-.99f,1);
-    public Vector2 fall = new Vector2(0,.99f);
     
     public float stoppingThreshold = 1.0f;
     public float jump = 10f;
@@ -20,7 +19,7 @@ public class DruidController : MonoBehaviour
 
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        
     } 
 
     void FixedUpdate(){
